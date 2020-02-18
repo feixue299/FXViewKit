@@ -12,8 +12,8 @@ public class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     
     private lazy var leftConstraint: NSLayoutConstraint = topView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
     private lazy var topConstraint: NSLayoutConstraint = topView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
-    private lazy var bottomConstraint: NSLayoutConstraint = topView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
-    private lazy var rightConstraint: NSLayoutConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
+    private lazy var bottomConstraint: NSLayoutConstraint = topView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
+    private lazy var rightConstraint: NSLayoutConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
 
     public let topView: Top
     public let bottomView: Bottom
@@ -22,8 +22,8 @@ public class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
         didSet {
             leftConstraint.constant = edges.left
             topConstraint.constant = edges.top
-            rightConstraint.constant = -edges.right
-            bottomConstraint.constant = -edges.bottom
+            rightConstraint.constant = edges.right
+            bottomConstraint.constant = edges.bottom
         }
     }
     

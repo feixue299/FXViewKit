@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     let lrView = LeftRightView<UILabel, UIButton>()
     let tbView = TopBottomView<UILabel, UIButton>()
+    let testView = LeftRightView<LeftRightView<UILabel, UILabel>, UIButton>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,20 +52,38 @@ class ViewController: UIViewController {
             tbView.bottomAnchor.constraint(equalTo: lrView.topAnchor)
         ])
         
+        testView.backgroundColor = .systemPink
+        testView.leftView.leftView.text = "left------"
+        testView.leftView.backgroundColor = .systemBlue
+        testView.leftView.rightView.backgroundColor = .green
+        testView.leftView.rightView.text = "right"
+        testView.rightView.setTitle("???????????", for: .normal)
+        testView.rightView.backgroundColor = .brown
+        
+        testView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(testView)
+        NSLayoutConstraint.activate([
+            testView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            testView.topAnchor.constraint(equalTo: lrView.bottomAnchor),
+            testView.heightAnchor.constraint(equalToConstant: 44),
+            testView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
     }
 
     @objc func lrViewTap() {
         lrView.edges.top = CGFloat(arc4random() % 10)
         lrView.edges.left = CGFloat(arc4random() % 10)
-        lrView.edges.right = CGFloat(arc4random() % 10)
-        lrView.edges.bottom = CGFloat(arc4random() % 10)
+        lrView.edges.right = -CGFloat(arc4random() % 10)
+        lrView.edges.bottom = -CGFloat(arc4random() % 10)
     }
     
     @objc func tbViewTap() {
         tbView.edges.top = CGFloat(arc4random() % 10)
         tbView.edges.left = CGFloat(arc4random() % 10)
-        tbView.edges.right = CGFloat(arc4random() % 10)
-        tbView.edges.bottom = CGFloat(arc4random() % 10)
+        tbView.edges.right = -CGFloat(arc4random() % 10)
+        tbView.edges.bottom = -CGFloat(arc4random() % 10)
     }
 
 }

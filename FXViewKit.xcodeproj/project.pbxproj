@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F962C9923FBFDC6005F72D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F962C9823FBFDC6005F72D3 /* ContentView.swift */; };
 		1FE3168C23FB1D78006D269C /* FXViewKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE3168A23FB1D78006D269C /* FXViewKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FE3169423FB1F25006D269C /* LeftRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3169323FB1F25006D269C /* LeftRightView.swift */; };
 		1FE316BD23FB3855006D269C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE316BC23FB3855006D269C /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F962C9823FBFDC6005F72D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FE3168723FB1D78006D269C /* FXViewKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXViewKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3168A23FB1D78006D269C /* FXViewKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXViewKit.h; sourceTree = "<group>"; };
 		1FE3168B23FB1D78006D269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				1FE3169323FB1F25006D269C /* LeftRightView.swift */,
 				1FE316D023FB3C26006D269C /* TopBottomView.swift */,
+				1F962C9823FBFDC6005F72D3 /* ContentView.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -236,6 +239,7 @@
 			files = (
 				1FE3169423FB1F25006D269C /* LeftRightView.swift in Sources */,
 				1FE316D123FB3C26006D269C /* TopBottomView.swift in Sources */,
+				1F962C9923FBFDC6005F72D3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
