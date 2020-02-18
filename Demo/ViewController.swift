@@ -71,6 +71,20 @@ class ViewController: UIViewController {
             testView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
         
+        contentView.edges = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
+        contentView.backgroundColor = .systemRed
+        contentView.contentView.backgroundColor = .green
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(contentView)
+        NSLayoutConstraint.activate([
+            contentView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.widthAnchor.constraint(equalToConstant: 40),
+            contentView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
     }
 
     @objc func lrViewTap() {

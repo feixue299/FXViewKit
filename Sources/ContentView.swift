@@ -12,8 +12,8 @@ public class ContentView<View: UIView>: UIView {
     
     private lazy var leftConstraint: NSLayoutConstraint = contentView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
     private lazy var topConstraint: NSLayoutConstraint = contentView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
-    private lazy var bottomConstraint: NSLayoutConstraint = contentView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
-    private lazy var rightConstraint: NSLayoutConstraint = contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
+    private lazy var bottomConstraint: NSLayoutConstraint = contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
+    private lazy var rightConstraint: NSLayoutConstraint = contentView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
     
     public let contentView: View
     
