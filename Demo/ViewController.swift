@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let lrView = LeftRightView<UILabel, UIButton>()
     let tbView = TopBottomView<UILabel, UIButton>()
     let testView = LeftRightView<LeftRightView<UILabel, UILabel>, UIButton>()
+    let contentView = ContentView<UIView>()
     
     override func viewDidLoad() {
         super.viewDidLoad()

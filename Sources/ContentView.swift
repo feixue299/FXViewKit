@@ -30,6 +30,8 @@ public class ContentView<View: UIView>: UIView {
         contentView = View()
         super.init(frame: frame)
         
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(contentView)
         
         NSLayoutConstraint.activate([leftConstraint, topConstraint, bottomConstraint, rightConstraint])
