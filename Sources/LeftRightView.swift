@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class LeftRightView<Left: UIView, Right: UIView>: UIView {
+open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     
     private lazy var leftConstraint: NSLayoutConstraint = leftView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
     private lazy var topConstraint: NSLayoutConstraint = leftView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
@@ -50,7 +50,7 @@ public class LeftRightView<Left: UIView, Right: UIView>: UIView {
         ])
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

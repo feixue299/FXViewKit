@@ -5,7 +5,7 @@
 For FXViewKit, use the following entry in your Podfile:
 
 ```rb
-pod 'FXViewKit', '~> 0.1.4'
+pod 'FXViewKit', '~> 0.1.5'
 ```
 
 Then run `pod install`.
@@ -16,7 +16,7 @@ Then run `pod install`.
 Make the following entry in your Cartfile:
 
 ```
-github "feixue299/FXViewKit" ~>0.1.4
+github "feixue299/FXViewKit" ~>0.1.5
 ```
 
 Then run `carthage update`.

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
+open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     
     private lazy var leftConstraint: NSLayoutConstraint = topView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
     private lazy var topConstraint: NSLayoutConstraint = topView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
@@ -50,7 +50,7 @@ public class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
         ])
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
