@@ -10,10 +10,12 @@ import UIKit
 
 open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     
-    private lazy var leftConstraint: NSLayoutConstraint = leftView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
-    private lazy var topConstraint: NSLayoutConstraint = leftView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
-    private lazy var bottomConstraint: NSLayoutConstraint = leftView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
-    private lazy var rightConstraint: NSLayoutConstraint = rightView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
+    private lazy var leftConstraint = leftView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
+    private lazy var leftViewTopConstraint = leftView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
+    private lazy var leftViewBottomConstraint = leftView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
+    private lazy var rightConstraint = rightView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
+    private lazy var rightViewTopConstraint = rightView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
+    private lazy var rightViewBottomConstraint = rightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
 
     public let leftView: Left
     public let rightView: Right
@@ -21,9 +23,9 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     public var edges: UIEdgeInsets = .zero {
         didSet {
             leftConstraint.constant = edges.left
-            topConstraint.constant = edges.top
-            rightConstraint.constant = edges.right
-            bottomConstraint.constant = edges.bottom
+            leftViewTopConstraint.constant = edges.top
+            rightConstraint.constant = -edges.right
+            leftViewBottomConstraint.constant = -edges.bottom
         }
     }
     
@@ -41,11 +43,11 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
         
         NSLayoutConstraint.activate([
             leftConstraint,
-            topConstraint,
-            bottomConstraint,
+            leftViewTopConstraint,
+            leftViewBottomConstraint,
             leftView.rightAnchor.constraint(equalTo: rightView.leftAnchor),
-            rightView.topAnchor.constraint(equalTo: leftView.topAnchor),
-            rightView.bottomAnchor.constraint(equalTo: leftView.bottomAnchor),
+            rightViewTopConstraint,
+            rightViewBottomConstraint,
             rightConstraint
         ])
     }

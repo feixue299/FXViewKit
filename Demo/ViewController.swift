@@ -90,15 +90,15 @@ class ViewController: UIViewController {
     @objc func lrViewTap() {
         lrView.edges.top = CGFloat(arc4random() % 10)
         lrView.edges.left = CGFloat(arc4random() % 10)
-        lrView.edges.right = -CGFloat(arc4random() % 10)
-        lrView.edges.bottom = -CGFloat(arc4random() % 10)
+        lrView.edges.right = CGFloat(arc4random() % 10)
+        lrView.edges.bottom = CGFloat(arc4random() % 10)
     }
     
     @objc func tbViewTap() {
         tbView.edges.top = CGFloat(arc4random() % 10)
         tbView.edges.left = CGFloat(arc4random() % 10)
-        tbView.edges.right = -CGFloat(arc4random() % 10)
-        tbView.edges.bottom = -CGFloat(arc4random() % 10)
+        tbView.edges.right = CGFloat(arc4random() % 10)
+        tbView.edges.bottom = CGFloat(arc4random() % 10)
     }
 
 }

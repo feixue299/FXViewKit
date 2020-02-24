@@ -10,20 +10,24 @@ import UIKit
 
 open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     
-    private lazy var leftConstraint: NSLayoutConstraint = topView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
-    private lazy var topConstraint: NSLayoutConstraint = topView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
-    private lazy var rightConstraint: NSLayoutConstraint = topView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
-    private lazy var bottomConstraint: NSLayoutConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
+    private lazy var topViewLeftConstraint = topView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
+    private lazy var topConstraint = topView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
+    private lazy var topViewRightConstraint = topView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
+    private lazy var bottomConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
+    private lazy var bottomViewLeftConstraint = bottomView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
+    private lazy var bottomViewRightConstraint = bottomView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
 
     public let topView: Top
     public let bottomView: Bottom
     
     public var edges: UIEdgeInsets = .zero {
         didSet {
-            leftConstraint.constant = edges.left
+            topViewLeftConstraint.constant = edges.left
+            bottomViewLeftConstraint.constant = edges.left
             topConstraint.constant = edges.top
-            rightConstraint.constant = edges.right
-            bottomConstraint.constant = edges.bottom
+            topViewRightConstraint.constant = -edges.right
+            bottomViewRightConstraint.constant = -edges.right
+            bottomConstraint.constant = -edges.bottom
         }
     }
     
@@ -40,13 +44,13 @@ open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
         addSubview(bottomView)
         
         NSLayoutConstraint.activate([
-            leftConstraint,
+            topViewLeftConstraint,
             topConstraint,
             bottomConstraint,
             topView.bottomAnchor.constraint(equalTo: bottomView.topAnchor),
-            bottomView.leftAnchor.constraint(equalTo: topView.leftAnchor),
-            bottomView.rightAnchor.constraint(equalTo: topView.rightAnchor),
-            rightConstraint
+            bottomViewLeftConstraint,
+            bottomViewRightConstraint,
+            topViewRightConstraint
         ])
     }
     
