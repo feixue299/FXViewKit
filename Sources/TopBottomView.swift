@@ -15,7 +15,7 @@ open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     private lazy var topViewRightConstraint = topView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
     private lazy var bottomConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
     private lazy var bottomViewLeftConstraint = bottomView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
-    private lazy var bottomViewRightConstraint = bottomView.rightAnchor.constraint(equalTo: rightAnchor, constant: edges.right)
+    private lazy var bottomViewRightConstraint = bottomView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
 
     public let topView: Top
     public let bottomView: Bottom

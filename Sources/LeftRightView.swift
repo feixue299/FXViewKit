@@ -15,7 +15,7 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     private lazy var leftViewBottomConstraint = leftView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
     private lazy var rightConstraint = rightView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
     private lazy var rightViewTopConstraint = rightView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
-    private lazy var rightViewBottomConstraint = rightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edges.bottom)
+    private lazy var rightViewBottomConstraint = rightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
 
     public let leftView: Left
     public let rightView: Right
@@ -24,8 +24,10 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
         didSet {
             leftConstraint.constant = edges.left
             leftViewTopConstraint.constant = edges.top
+            rightViewTopConstraint.constant = edges.top
             rightConstraint.constant = -edges.right
             leftViewBottomConstraint.constant = -edges.bottom
+            rightViewBottomConstraint.constant = -edges.bottom
         }
     }
     
