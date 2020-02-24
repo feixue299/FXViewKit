@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CustomIntrinsicContentSizeView: UIView {
+open class CustomIntrinsicContentSizeView: UIView {
 
     override public var intrinsicContentSize: CGSize {
         return frame.size
