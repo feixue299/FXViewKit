@@ -11,9 +11,12 @@ import UIKit
 public class TextFieldBinder: NSObject, UITextFieldDelegate {
     
     private let bindTo: (String?) -> Void
+    private let didEndEditing: ((String?) -> Void)?
     
-    public init(bindTo:@escaping (String?) -> Void) {
+    public init(bindTo:@escaping (String?) -> Void,
+                didEndEditing:((String?) -> Void)? = nil) {
         self.bindTo = bindTo
+        self.didEndEditing = didEndEditing
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -21,6 +24,10 @@ public class TextFieldBinder: NSObject, UITextFieldDelegate {
         bindTo(text)
         
         return true
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        didEndEditing?(textField.text)
     }
 
 }
