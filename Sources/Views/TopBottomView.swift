@@ -16,10 +16,16 @@ open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     private lazy var bottomConstraint = bottomView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
     private lazy var bottomViewLeftConstraint = bottomView.leftAnchor.constraint(equalTo: leftAnchor, constant: edges.left)
     private lazy var bottomViewRightConstraint = bottomView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
+    private lazy var centerLineConstraint = topView.bottomAnchor.constraint(equalTo: bottomView.topAnchor, constant: space)
 
     public let topView: Top
     public let bottomView: Bottom
     
+    public var space: CGFloat = 0 {
+        didSet {
+            centerLineConstraint.constant = -space
+        }
+    }
     public var edges: UIEdgeInsets = .zero {
         didSet {
             topViewLeftConstraint.constant = edges.left
@@ -47,7 +53,7 @@ open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
             topViewLeftConstraint,
             topConstraint,
             bottomConstraint,
-            topView.bottomAnchor.constraint(equalTo: bottomView.topAnchor),
+            centerLineConstraint,
             bottomViewLeftConstraint,
             bottomViewRightConstraint,
             topViewRightConstraint

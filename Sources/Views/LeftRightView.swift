@@ -16,10 +16,16 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     private lazy var rightConstraint = rightView.rightAnchor.constraint(equalTo: rightAnchor, constant: -edges.right)
     private lazy var rightViewTopConstraint = rightView.topAnchor.constraint(equalTo: topAnchor, constant: edges.top)
     private lazy var rightViewBottomConstraint = rightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -edges.bottom)
+    private lazy var centerLineConstraint = leftView.rightAnchor.constraint(equalTo: rightView.leftAnchor, constant: space)
 
     public let leftView: Left
     public let rightView: Right
     
+    public var space: CGFloat = 0 {
+        didSet {
+            centerLineConstraint.constant = -space
+        }
+    }
     public var edges: UIEdgeInsets = .zero {
         didSet {
             leftConstraint.constant = edges.left
@@ -47,7 +53,7 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
             leftConstraint,
             leftViewTopConstraint,
             leftViewBottomConstraint,
-            leftView.rightAnchor.constraint(equalTo: rightView.leftAnchor),
+            centerLineConstraint,
             rightViewTopConstraint,
             rightViewBottomConstraint,
             rightConstraint

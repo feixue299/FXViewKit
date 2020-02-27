@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "FXViewKit"
-  spec.version      = "0.1.9"
+  spec.version      = "0.1.10"
   spec.summary      = "A View Framework"
   spec.homepage     = "https://github.com/feixue299/FXViewKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
