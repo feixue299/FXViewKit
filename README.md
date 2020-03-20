@@ -1,4 +1,9 @@
 # FXViewKit
+
+## Requirements
+- iOS 9.0+
+ 
+## Installation
  
 ### CocoaPods
 
