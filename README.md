@@ -37,6 +37,7 @@ let package = Package(
     ],
     // ...
 )
+```swift
 
 ### Example
 ```swift
