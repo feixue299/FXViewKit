@@ -10,7 +10,7 @@
 For FXViewKit, use the following entry in your Podfile:
 
 ```rb
-pod 'FXViewKit', '~> 0.1.10'
+pod 'FXViewKit', '~> 0.1.11'
 ```
 
 Then run `pod install`.
@@ -21,10 +21,22 @@ Then run `pod install`.
 Make the following entry in your Cartfile:
 
 ```
-github "feixue299/FXViewKit" ~>0.1.10
+github "feixue299/FXViewKit" ~>0.1.11
 ```
 
 Then run `carthage update`.
+
+### [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+Create a `Package.swift` file.
+
+```swift
+let package = Package(
+    dependencies: [
+        .package(url: "https://github.com/feixue299/FXViewKit.git", from: "0.1.11")
+    ],
+    // ...
+)
 
 ### Example
 ```swift
