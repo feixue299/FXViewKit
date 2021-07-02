@@ -15,4 +15,13 @@ open class GradientView: UIView {
     open var gradientLayer: CAGradientLayer {
         return layer as! CAGradientLayer
     }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        isUserInteractionEnabled = false
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
