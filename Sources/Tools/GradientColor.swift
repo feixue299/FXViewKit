@@ -114,7 +114,7 @@ public extension UIView {
     }
 }
 
-private extension UIColor {
+extension UIColor {
     /// SwifterSwift: Create Color from hexadecimal string with optional transparency (if applicable).
     ///
     /// - Parameters:
