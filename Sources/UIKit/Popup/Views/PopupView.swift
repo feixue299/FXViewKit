@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc(HTPopupView)
+@objc(FXPopupView)
 @objcMembers
 open class PopupView: UIView, PopupViewProtocol {
     
