@@ -1,24 +1,23 @@
 //
 //  PopupController.swift
-//  HTComponents
+//  FXViewKit
 //
 //  Created by mac on 2021/6/10.
 //
 
 import UIKit
-import SnapKit
 
-@objc(HTPopupViewProtocol)
+@objc(FXPopupViewProtocol)
 public protocol PopupViewProtocol: NSObjectProtocol {
     weak var popupControllerDelegate: PopupControllerProtocol? { set get }
 }
 
-@objc(HTPopupControllerProtocol)
+@objc(FXPopupControllerProtocol)
 public protocol PopupControllerProtocol: NSObjectProtocol {
     func dismiss()
 }
 
-@objc(HTPopupController)
+@objc(FXPopupController)
 @objcMembers
 open class PopupController: UIViewController, PopupControllerProtocol {
     
@@ -40,12 +39,15 @@ open class PopupController: UIViewController, PopupControllerProtocol {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        self.customView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(self.customView)
-        self.customView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.height.lessThanOrEqualToSuperview()
-        }
+        NSLayoutConstraint.activate([
+            customView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            customView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            customView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor),
+            customView.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor),
+        ])
         
     }
     
