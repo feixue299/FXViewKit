@@ -125,14 +125,14 @@ open class PopupController: UIViewController, PopupControllerProtocol {
     
 }
 
-extension UIApplication {
+public extension UIApplication {
     func fx_keyWindow() -> UIWindow? {
         let keyWindow: UIWindow?
         if let window = UIApplication.shared.delegate?.window?.flatMap({ $0 }) {
             keyWindow = window
         } else {
             if #available(iOS 13.0, *) {
-                if let window = UIApplication.shared.connectedScenes.first?.value(forKey: "delegate.window") as? UIWindow {
+                if let window = ((UIApplication.shared.connectedScenes.first as? UIWindowScene)?.delegate as? UIWindowSceneDelegate)?.window {
                     keyWindow = window
                 } else {
                     keyWindow = UIApplication.shared.keyWindow
