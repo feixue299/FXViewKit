@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "FXViewKit"
-  spec.version      = "0.2.2"
+  spec.version      = "0.2.3"
   spec.summary      = "A View Framework"
   spec.homepage     = "https://github.com/feixue299/FXViewKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
@@ -16,5 +16,5 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/feixue299/FXViewKit.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources", "Sources/**/*.{h,m,swift}"
   spec.ios.deployment_target  = '9.0'
-  spec.swift_versions = ['4.0', '5.0', '5.1']
+  spec.swift_versions = ['5.0', '5.1']
 end
