@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct GradientColor: CaseIterable {
+public protocol GradientColorProtocol {
+    var colors: [UIColor] { get }
+}
+
+public struct GradientColor: CaseIterable, GradientColorProtocol {
     public let colors: [UIColor]
 }
 
@@ -105,7 +109,7 @@ public extension UIView {
         }
     }
     
-    func configGradientColor(_ color: GradientColor?, directions: (start: Direction, end: Direction) = (.bottomLeft, .topRight)) {
+    func configGradientColor(_ color: GradientColorProtocol?, directions: (start: Direction, end: Direction) = (.bottomLeft, .topRight)) {
         if let layer = layer as? CAGradientLayer, let color = color {
             layer.colors = color.colors.map(\.cgColor)
             layer.startPoint = directions.start.point
