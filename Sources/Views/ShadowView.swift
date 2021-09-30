@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public class ShadowView<View: UIView>: UIView {
@@ -39,4 +40,4 @@ public class ShadowView<View: UIView>: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
+#endif

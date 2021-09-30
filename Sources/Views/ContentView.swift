@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public class ContentView<View: UIView>: UIView {
@@ -42,3 +43,4 @@ public class ContentView<View: UIView>: UIView {
     }
     
 }
+#endif

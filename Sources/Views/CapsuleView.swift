@@ -4,7 +4,7 @@
 //
 //  Created by mac on 2021/7/1.
 //
-
+#if !os(macOS)
 import UIKit
 
 open class CapsuleView: UIView {
@@ -13,3 +13,4 @@ open class CapsuleView: UIView {
         layer.cornerRadius = frame.height / 2
     }
 }
+#endif

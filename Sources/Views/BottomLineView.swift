@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public class BottomLineView<View: UIView>: UIView {
@@ -43,3 +44,4 @@ public class BottomLineView<View: UIView>: UIView {
     }
     
 }
+#endif

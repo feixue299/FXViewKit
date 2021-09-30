@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048A1DC02705642D00B23393 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A1DBD2705642C00B23393 /* GradientColor.swift */; };
+		048A1DC12705642D00B23393 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A1DBE2705642D00B23393 /* AppLayout.swift */; };
+		048A1DC22705642D00B23393 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A1DBF2705642D00B23393 /* AppTheme.swift */; };
 		1F6FDA5923FC8663008D5647 /* CustomIntrinsicContentSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FDA5823FC8663008D5647 /* CustomIntrinsicContentSizeView.swift */; };
 		1F8599EC2404736E00C65341 /* BottomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8599EB2404736E00C65341 /* BottomLineView.swift */; };
 		1F8599EE2404753400C65341 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8599ED2404753400C65341 /* ShadowView.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048A1DBD2705642C00B23393 /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
+		048A1DBE2705642D00B23393 /* AppLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
+		048A1DBF2705642D00B23393 /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		1F6FDA5823FC8663008D5647 /* CustomIntrinsicContentSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntrinsicContentSizeView.swift; sourceTree = "<group>"; };
 		1F8599EB2404736E00C65341 /* BottomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineView.swift; sourceTree = "<group>"; };
 		1F8599ED2404753400C65341 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 		1F8599F024047FB500C65341 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				048A1DBE2705642D00B23393 /* AppLayout.swift */,
+				048A1DBF2705642D00B23393 /* AppTheme.swift */,
+				048A1DBD2705642C00B23393 /* GradientColor.swift */,
 				1F8599F12404810800C65341 /* TextFieldBinder.swift */,
 			);
 			path = Tools;
@@ -266,12 +275,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8599EE2404753400C65341 /* ShadowView.swift in Sources */,
+				048A1DC12705642D00B23393 /* AppLayout.swift in Sources */,
 				1FE3169423FB1F25006D269C /* LeftRightView.swift in Sources */,
 				1FE316D123FB3C26006D269C /* TopBottomView.swift in Sources */,
+				048A1DC02705642D00B23393 /* GradientColor.swift in Sources */,
 				1F6FDA5923FC8663008D5647 /* CustomIntrinsicContentSizeView.swift in Sources */,
 				1F8599EC2404736E00C65341 /* BottomLineView.swift in Sources */,
 				1F962C9923FBFDC6005F72D3 /* ContentView.swift in Sources */,
 				1F8599F22404810800C65341 /* TextFieldBinder.swift in Sources */,
+				048A1DC22705642D00B23393 /* AppTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

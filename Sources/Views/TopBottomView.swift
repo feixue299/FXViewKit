@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
@@ -65,4 +66,4 @@ open class TopBottomView<Top: UIView, Bottom: UIView>: UIView {
     }
     
 }
-
+#endif

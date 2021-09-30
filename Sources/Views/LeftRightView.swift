@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 open class LeftRightView<Left: UIView, Right: UIView>: UIView {
@@ -65,3 +66,4 @@ open class LeftRightView<Left: UIView, Right: UIView>: UIView {
     }
     
 }
+#endif

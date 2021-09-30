@@ -6,6 +6,8 @@
 //
 
 import Foundation
+#if !os(macOS)
+import UIKit
 
 public struct AppTheme {
     public let activity: UIColor
@@ -44,3 +46,4 @@ public struct AppTheme {
     public static var label: UIColor { return currentTheme.label}
     public static var label1: UIColor { return currentTheme.label1}
 }
+#endif

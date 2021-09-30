@@ -5,6 +5,7 @@
 //  Created by mac on 2021/6/30.
 //
 
+#if !os(macOS)
 import UIKit
 
 open class GradientView: UIView {
@@ -25,3 +26,4 @@ open class GradientView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+#endif

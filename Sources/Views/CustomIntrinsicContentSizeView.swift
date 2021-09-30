@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 open class CustomIntrinsicContentSizeView: UIView {
@@ -15,3 +16,4 @@ open class CustomIntrinsicContentSizeView: UIView {
     }
 
 }
+#endif

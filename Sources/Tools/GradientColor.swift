@@ -6,6 +6,8 @@
 //
 
 import Foundation
+#if !os(macOS)
+import UIKit
 
 public protocol GradientColorProtocol {
     var colors: [UIColor] { get }
@@ -170,3 +172,4 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: trans)
     }
 }
+#endif
