@@ -17,6 +17,10 @@ open class GradientView: UIView {
         return layer as! CAGradientLayer
     }
     
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         isUserInteractionEnabled = false

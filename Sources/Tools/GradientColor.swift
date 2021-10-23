@@ -15,6 +15,9 @@ public protocol GradientColorProtocol {
 
 public struct GradientColor: CaseIterable, GradientColorProtocol {
     public let colors: [UIColor]
+    public init(colors: [UIColor]) {
+        self.colors = colors
+    }
 }
 
 public extension GradientColor {
@@ -90,6 +93,7 @@ public extension UIView {
         case topRight
         case right
         case bottomRight
+        case bottom
         
         var point: CGPoint {
             switch self {
@@ -107,15 +111,21 @@ public extension UIView {
                 return CGPoint(x: 1, y: 0.5)
             case .bottomRight:
                 return CGPoint(x: 1, y: 1)
+            case .bottom:
+                return CGPoint(x: 0.5, y: 1)
             }
         }
     }
     
     func configGradientColor(_ color: GradientColorProtocol?, directions: (start: Direction, end: Direction) = (.bottomLeft, .topRight)) {
+        configGradientColor(color, startDirection: directions.start, endDirection: directions.end)
+    }
+    
+    func configGradientColor(_ color: GradientColorProtocol?, startDirection: Direction = .bottomLeft, endDirection: Direction = .topRight) {
         if let layer = layer as? CAGradientLayer, let color = color {
             layer.colors = color.colors.map(\.cgColor)
-            layer.startPoint = directions.start.point
-            layer.endPoint = directions.end.point
+            layer.startPoint = startDirection.point
+            layer.endPoint = endDirection.point
         }
     }
 }
