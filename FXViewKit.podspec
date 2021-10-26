@@ -8,13 +8,29 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "FXViewKit"
-  spec.version      = "0.3.0"
+  spec.version      = "0.4.0"
   spec.summary      = "A View Framework"
   spec.homepage     = "https://github.com/feixue299/FXViewKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "wupengfei" => "1569485690@qq.com" }
   spec.source       = { :git => "https://github.com/feixue299/FXViewKit.git", :tag => "#{spec.version}" }
-  spec.source_files  = "Sources", "Sources/**/*.{h,m,swift}"
+  spec.default_subspec = "Core"
   spec.ios.deployment_target  = '9.0'
-  spec.swift_versions = ['5.0', '5.1']
+  spec.swift_versions = '5.0'
+  
+  spec.subspec 'Core' do |ss|
+    ss.source_files  = "Sources", "Sources/Core/**/*.{h,m,swift}"
+  end
+  
+  spec.subspec 'MBProgressHUD' do |ss|
+    ss.source_files  = "Sources", "Sources/MBProgressHUD/**/*.{h,m,swift}"
+    ss.dependency 'FXViewKit/Core'
+    ss.dependency 'MBProgressHUD', '~> 1.2.0'
+  end
+  
+  spec.subspec 'Full' do |ss|
+    ss.dependency 'FXViewKit/Core'
+    ss.dependency 'FXViewKit/MBProgressHUD'
+  end
+  
 end
