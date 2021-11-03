@@ -19,12 +19,8 @@ public extension MBProgressHUD {
     
     func loading(_ text: String? = nil) {
         DispatchQueue.main.async { [self] in
-            if let text = text {
-                mode = .annularDeterminate
-                label.text = text
-            } else {
-                mode = .indeterminate
-            }
+            mode = .indeterminate
+            label.text = text
             show(animated: true)
         }
     }
