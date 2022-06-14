@@ -12,6 +12,7 @@ import UIKit
 public struct AppLayout {
     public static var backgroundSpacing: CGFloat = 20
     public static var contentSpacing: CGFloat = 15
+    public static var contentMargin: CGFloat = 10
     public static var elementSpacing: CGFloat = 5
     public static var viewCornerRadius: CGFloat = 6
 }
