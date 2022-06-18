@@ -8,6 +8,7 @@
 import Foundation
 
 public extension CALayer {
+    /// 脉冲效果
     func pulseAnimation() {
         let duration: Double = 1.8
         do {
