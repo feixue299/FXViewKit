@@ -26,13 +26,14 @@ open class GradientView<T: UIView>: UIView {
     public init(contentView: T) {
         self.contentView = contentView
         super.init(frame: .zero)
+        isUserInteractionEnabled = true
         configView()
     }
     
     public override init(frame: CGRect) {
         self.contentView = T()
         super.init(frame: frame)
-        isUserInteractionEnabled = false
+        isUserInteractionEnabled = true
         configView()
     }
     

@@ -14,12 +14,14 @@ open class CapsuleView<T: UIView>: UIView {
     public init(contentView: T) {
         self.contentView = contentView
         super.init(frame: .zero)
+        isUserInteractionEnabled = true
         configView()
     }
     
     override init(frame: CGRect) {
         self.contentView = T(frame: frame)
         super.init(frame: frame)
+        isUserInteractionEnabled = true
         configView()
     }
     
