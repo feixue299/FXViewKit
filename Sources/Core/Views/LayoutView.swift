@@ -39,4 +39,16 @@ open class LayoutView: UIScrollView {
         views.forEach(stackView.addArrangedSubview)
     }
     
+    public func disableVerticalScroll() {
+        NSLayoutConstraint.activate([
+            stackView.heightAnchor.constraint(equalTo: heightAnchor)
+        ])
+    }
+    
+    public func disableHorizontalScroll() {
+        NSLayoutConstraint.activate([
+            stackView.widthAnchor.constraint(equalTo: widthAnchor)
+        ])
+    }
+    
 }

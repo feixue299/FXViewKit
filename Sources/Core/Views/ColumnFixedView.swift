@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ColumnFixedView: ColumnView {
+public class ColumnFixedView: ColumnView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        disableVerticalScroll()
     }
     
     required public init?(coder: NSCoder) {

@@ -13,6 +13,7 @@ open class ColumnView: LayoutView {
         super.init(frame: frame)
         
         stackView.axis = .vertical
+        disableHorizontalScroll()
     }
     
     required public init?(coder: NSCoder) {

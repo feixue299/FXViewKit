@@ -7,10 +7,11 @@
 
 import UIKit
 
-class RowFixedView: RowView {
+public class RowFixedView: RowView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        disableHorizontalScroll()
     }
     
     required public init?(coder: NSCoder) {
