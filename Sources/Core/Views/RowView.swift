@@ -11,6 +11,8 @@ open class RowView: LayoutView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        stackView.axis = .horizontal
     }
     
     required public init?(coder: NSCoder) {

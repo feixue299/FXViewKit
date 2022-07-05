@@ -18,6 +18,6 @@ let package = Package(
             name: "FXViewKit",
             dependencies: [],
             path: "Sources",
-            sources:["Tools", "Views"])
+            sources:["Core"])
     ]
 )

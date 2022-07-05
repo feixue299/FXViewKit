@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension CALayer {
     /// 脉冲效果

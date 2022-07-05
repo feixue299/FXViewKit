@@ -46,7 +46,7 @@ public extension FXViewWrapper where Base: UIImage {
     }
     
     func vimage(blur: CGFloat = 0.5) -> UIImage? {
-        var blur = (0...1).contains(blur) ? blur : 0.5
+        let blur = (0...1).contains(blur) ? blur : 0.5
         var boxSize = Int(blur * 40)
         boxSize = boxSize - (boxSize % 2) + 1
         

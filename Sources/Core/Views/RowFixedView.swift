@@ -1,18 +1,16 @@
 //
-//  ColumnView.swift
-//  FXViewKit
+//  RowFixedView.swift
+//  
 //
-//  Created by aria on 2022/7/4.
+//  Created by aria on 2022/7/5.
 //
 
 import UIKit
 
-open class ColumnView: LayoutView {
+class RowFixedView: RowView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        stackView.axis = .vertical
     }
     
     required public init?(coder: NSCoder) {

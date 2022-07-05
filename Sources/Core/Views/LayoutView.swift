@@ -31,4 +31,12 @@ open class LayoutView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func addArrangedSubview(_ view: UIView) {
+        stackView.addArrangedSubview(view)
+    }
+    
+    public func addArrangedSubviews(_ views: [UIView]) {
+        views.forEach(stackView.addArrangedSubview)
+    }
+    
 }
