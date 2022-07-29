@@ -31,3 +31,12 @@ public extension MBProgressHUD {
         }
     }
 }
+
+public extension UIViewController {
+  
+  func getMBProgressHUD() -> MBProgressHUD {
+    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+    return hud
+  }
+  
+}
