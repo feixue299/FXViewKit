@@ -5,7 +5,7 @@
 //  Created by aria on 2023/2/19.
 //
 
-import Foundation
+import UIKit
 
 public class DownloadButton: UIButton {
     
