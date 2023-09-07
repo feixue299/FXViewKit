@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "FXViewKit",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v13)
     ],
     products: [
         .library(

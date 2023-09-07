@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "wupengfei" => "1569485690@qq.com" }
   spec.source       = { :git => "https://github.com/feixue299/FXViewKit.git", :tag => "#{spec.version}" }
   spec.default_subspec = "Core"
-  spec.ios.deployment_target  = '9.0'
+  spec.ios.deployment_target  = '13.0'
   spec.swift_versions = '5.0'
   
   spec.subspec 'Core' do |ss|
